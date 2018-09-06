@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfWorkplace
+namespace WpfWorkplace.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SquaresField.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SquaresField : Window
     {
-        public MainWindow()
+        public SquaresField()
         {
             InitializeComponent();
-        }
-        
-        private void drawingSurface_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Hello2!");
         }
     }
 }

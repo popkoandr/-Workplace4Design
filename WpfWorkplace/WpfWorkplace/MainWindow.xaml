@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfWorkplace"
+        xmlns:local1="clr-namespace:WpfWorkplace.CustomControls.Wrappers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <local1:DrawingCanvas x:Name="drawingSurface" Background="Beige" Margin="50" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown"></local1:DrawingCanvas>
     </Grid>
 </Window>
