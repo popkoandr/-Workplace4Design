@@ -42,9 +42,20 @@ namespace WpfWorkplace.CustomControls.Wrappers
             base.RemoveLogicalChild(visual);
         }
 
-        private void drawingSurface_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /// <summary>
+        /// In this case, the code ignores any hit object that isn’t a DrawingVisual, 
+        /// including the DrawingCanvas itself.
+        /// If no squares are clicked, the method returns a null reference.
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
+        public DrawingVisual GetVisual(Point point)
         {
-            MessageBox.Show("Hello!");
+            HitTestResult hitResult = VisualTreeHelper.HitTest(this, point);
+            return hitResult.VisualHit as DrawingVisual;
         }
+
+
+         
     }
 }

@@ -7,7 +7,52 @@
         xmlns:local1="clr-namespace:WpfWorkplace.CustomControls.Wrappers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="Flag" TargetType="RadioButton">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Opacity" Value="0.3"/>
+                    <!--<Setter Property="BorderBrush" Value="Blue"/>
+                    <Setter Property="BorderThickness" Value="4"/>-->
+                </Trigger>
+            </Style.Triggers>
+            <!--<Setter Property="FontSize" Value="22"></Setter>-->
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="Margin" Value="0,5"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+                                CornerRadius="20">
+                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <local1:DrawingCanvas x:Name="drawingSurface" Background="Beige" Margin="50" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown"></local1:DrawingCanvas>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <ItemsControl>
+                <RadioButton Content="../Resources/add.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="40" Height="40"/>
+                <RadioButton Content="../Resources/move.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="40" Height="40"/>
+                <RadioButton Content="../Resources/delete.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="40" Height="40"/>
+            </ItemsControl>
+            <!--<RadioButton Content="/Resources/add.png"/>-->
+            <!--<RadioButton Content="Move"/>
+            <RadioButton Content="Delete"/>-->
+        </StackPanel>
+
+        <local1:DrawingCanvas x:Name="drawingSurface" 
+                              Grid.Column="1"
+                              Background="Beige" 
+                              Margin="5" 
+                              MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown"/>
     </Grid>
 </Window>
