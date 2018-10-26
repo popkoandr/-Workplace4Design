@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{093105BC-2754-4F6D-B90E-93AE608164DB}</ProjectGuid>
+    <ProjectGuid>{F82D24F7-D214-4B50-9D7A-2C398F371A56}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfWorkplace</RootNamespace>
-    <AssemblyName>WpfWorkplace</AssemblyName>
+    <RootNamespace>Workplace.Gui.WPF</RootNamespace>
+    <AssemblyName>Workplace.Gui.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,13 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CustomControls\Wrappers\DrawingCanvas.cs" />
-    <Compile Include="Views\SecondWindow.xaml.cs">
-      <DependentUpon>SecondWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SquaresField.xaml.cs">
-      <DependentUpon>SquaresField.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModels\Base\CommandHolder.cs" />
+    <Compile Include="ViewModels\Base\Helpers.cs" />
+    <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,18 +71,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\SecondWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SquaresField.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -114,7 +99,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Workplace.Common\Workplace.Common.csproj">
+      <Project>{56611922-de71-4e96-b0a8-db68dd29ff65}</Project>
+      <Name>Workplace.Common</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
