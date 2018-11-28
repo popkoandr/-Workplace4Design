@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace Workplace.Console.DelegatesEvents
+namespace Workplace.ConsoleApp.DelegatesEvents
 {
     class MathService
     {

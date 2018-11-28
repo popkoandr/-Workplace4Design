@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DelegatesEvents\IMathPerformService.cs" />
-    <Compile Include="DelegatesEvents\LogginService.cs" />
-    <Compile Include="DelegatesEvents\MathPerformedEventArgs.cs" />
-    <Compile Include="DelegatesEvents\MathService.cs" />
+    <Compile Include="Lessons\CovarianceContravariance\Account.cs" />
+    <Compile Include="Lessons\CovarianceContravariance\Bank.cs" />
+    <Compile Include="Lessons\DelegatesEvents\IMathPerformService.cs" />
+    <Compile Include="Lessons\DelegatesEvents\LogginService.cs" />
+    <Compile Include="Lessons\DelegatesEvents\MathPerformedEventArgs.cs" />
+    <Compile Include="Lessons\DelegatesEvents\MathService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

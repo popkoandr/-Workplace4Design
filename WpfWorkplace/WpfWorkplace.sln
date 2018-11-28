@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workplace.Gui.WPF", "Workpl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workplace.Common", "Workplace.Common\Workplace.Common.csproj", "{56611922-DE71-4E96-B0A8-DB68DD29FF65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workplace.Console", "Workplace.Console\Workplace.Console.csproj", "{0A8F721A-0A4A-4527-A756-791E0C1B7127}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workplace.ConsoleApp", "Workplace.Console\Workplace.ConsoleApp.csproj", "{0A8F721A-0A4A-4527-A756-791E0C1B7127}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
