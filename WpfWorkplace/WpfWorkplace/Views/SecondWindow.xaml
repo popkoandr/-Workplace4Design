@@ -6,7 +6,43 @@
         xmlns:local="clr-namespace:WpfWorkplace.Views"
         mc:Ignorable="d"
         Title="SecondWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="btTemplate">
+            <Border x:Name="buttonBorder"
+                    CornerRadius="10" 
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    Height="{TemplateBinding Height}"
+                    Width="{TemplateBinding Width}" >
+                    <TextBlock Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Text="{TemplateBinding Content}" />
+            </Border>
+            <ControlTemplate.Triggers>                
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Trigger.EnterActions>
+                        <!--<BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="buttonBorder" Storyboard.TargetProperty="Height" To="125" Duration="0:0:.3" />
+                            </Storyboard>
+                        </BeginStoryboard>-->
+                    </Trigger.EnterActions>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="buttonBorder" Property="Background" Value="Azure" />
+                    <Setter TargetName="buttonBorder" Property="BorderBrush" Value="DarkBlue" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <Setter TargetName="buttonBorder" Property="Background" Value="LightGray"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Button x:Name="myBtn" Background="LightPink" BorderBrush="Red" Width="70" Height="30" Content="dfggd"  Template="{StaticResource btTemplate}"/>
     </Grid>
 </Window>
