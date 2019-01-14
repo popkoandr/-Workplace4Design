@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfWorkplace.Views;
 
 namespace WpfWorkplace
 {
@@ -13,5 +14,12 @@ namespace WpfWorkplace
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            var sw = new SecondWindow();
+            sw.Top = 100;
+            sw.Left = 400;
+            sw.Show();
+        }
     }
 }
